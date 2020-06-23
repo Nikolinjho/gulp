@@ -23,6 +23,8 @@ const postcssCurrentSelector = require('postcss-current-selector');
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssExtend = require('postcss-extend-rule');
 const postcssMixins = require('postcss-mixins');
+const postcssVars = require('postcss-simple-vars');
+const postcssConditionals = require('postcss-conditionals');
 
 // js plugins 
 const uglify = require("gulp-uglify");                         // js minifier
@@ -106,6 +108,9 @@ function postCSSPlugins() {
         cssnano({
             preset: 'default',
         }),
+        postcssInlineSVG(),
+        postcssVars(),
+        postcssConditionals()
     ]
 }
 
