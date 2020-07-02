@@ -1,30 +1,32 @@
-
 @import "./lib/reset.css";
-
-/* mixin'ы */
-@import "./bem-blocks/mixins.css";
-
-/* main code */
-@import "./bem-blocks/header.css" ;
-@import "./bem-blocks/bem-content.css" ;
-@import "./bem-blocks/footer.css" ;
-/* links, btns */
-@import "./bem-blocks/bem-btn.css" ;
-  
 /* vars */
+
 @import './bem-blocks/variables.css';
+/* mixin'ы */
 
+@import "./bem-blocks/mixins.css";
+/* main code */
 
-*{
- box-sizing: border-box; 
-  
-}       
+@import "./bem-blocks/header.css";
+@import "./bem-blocks/bem-content.css";
+@import "./bem-blocks/footer.css";
+/* links, btns */
 
-html, body{
+@import "./bem-blocks/bem-btn.css";
+@import './bem-blocks/bem-block.css';
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    &:after, &:before {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+html, body {
     height: 100%;
 }
 
-body{
+body {
     padding: 0px;
     margin: 0;
     font-family: $font;
@@ -34,10 +36,18 @@ body{
     text-rendering: optimizeSpeed;
 }
 
-a{
-    text-decoration: none;
+.site-carcass {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
 }
 
-
-
-
+a {
+    text-decoration: none;
+}
